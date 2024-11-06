@@ -30,8 +30,6 @@ namespace WinFormsApp5
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
-            label7 = new Label();
             txtMotachitiet = new TextBox();
             label6 = new Label();
             txtMotangan = new TextBox();
@@ -50,20 +48,18 @@ namespace WinFormsApp5
             btnThem = new Button();
             btnLammoi = new Button();
             groupBox3 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dgvSanPham = new DataGridView();
             txtTimKiem = new TextBox();
             btnTimKiem = new Button();
             label9 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txtMotachitiet);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(txtMotangan);
@@ -82,26 +78,6 @@ namespace WinFormsApp5
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Đồ Ăn", "Nước Uống ", "Loại Loại" });
-            comboBox1.Location = new Point(130, 303);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(145, 23);
-            comboBox1.TabIndex = 27;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(60, 306);
-            label7.Name = "label7";
-            label7.Size = new Size(29, 15);
-            label7.TabIndex = 26;
-            label7.Text = "Loại";
-            label7.Click += label7_Click_1;
             // 
             // txtMotachitiet
             // 
@@ -254,10 +230,11 @@ namespace WinFormsApp5
             btnLammoi.TabIndex = 4;
             btnLammoi.Text = "Làm Mới";
             btnLammoi.UseVisualStyleBackColor = true;
+            btnLammoi.Click += btnLammoi_Click;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(dataGridView1);
+            groupBox3.Controls.Add(dgvSanPham);
             groupBox3.Controls.Add(txtTimKiem);
             groupBox3.Controls.Add(btnTimKiem);
             groupBox3.Controls.Add(label9);
@@ -268,14 +245,17 @@ namespace WinFormsApp5
             groupBox3.TabStop = false;
             groupBox3.Text = "Dữ liệu";
             // 
-            // dataGridView1
+            // dgvSanPham
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 68);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(516, 352);
-            dataGridView1.TabIndex = 6;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvSanPham.AllowUserToAddRows = false;
+            dgvSanPham.AllowUserToDeleteRows = false;
+            dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSanPham.Location = new Point(6, 68);
+            dgvSanPham.Name = "dgvSanPham";
+            dgvSanPham.ReadOnly = true;
+            dgvSanPham.Size = new Size(516, 352);
+            dgvSanPham.TabIndex = 6;
+            dgvSanPham.CellClick += dgvSanPham_CellClick;
             // 
             // txtTimKiem
             // 
@@ -318,7 +298,7 @@ namespace WinFormsApp5
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
             ResumeLayout(false);
         }
 
@@ -353,8 +333,6 @@ namespace WinFormsApp5
 
         #endregion
         private GroupBox groupBox1;
-        private ComboBox comboBox1;
-        private Label label7;
         private TextBox txtMotachitiet;
         private Label label6;
         private TextBox txtMotangan;
@@ -376,6 +354,6 @@ namespace WinFormsApp5
         private TextBox txtTimKiem;
         private Button btnTimKiem;
         private Label label9;
-        private DataGridView dataGridView1;
+        private DataGridView dgvSanPham;
     }
 }
